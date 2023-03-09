@@ -12,7 +12,7 @@ class PersonController extends Controller
         $query = Person::query();
         
         if($request->has("name"))
-            $query->where("name", "LIKE", "%" . $request->name . "%");
+            $query->where("full_name", "LIKE", "%" . $request->name . "%");
 
         return $query->get();
     }
